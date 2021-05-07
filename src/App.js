@@ -2,7 +2,10 @@ import React from 'react';
 
 function App() {
     return (
-        <div>hello world</div>
+        <div className="container">
+            <h1>Source Serif Pro</h1>
+            <p>hello world</p>
+        </div>
     );
 }
 
