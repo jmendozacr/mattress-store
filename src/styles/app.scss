@@ -1,12 +1,13 @@
 body {
-  color: $primary;
+    color: $primary;
+    background-color: $tertiary !important;
 }
 
-h1 {
-  font-family: 'Source Serif Pro', serif;
+h1, h2, h3, h4 {
+    font-family: 'Source Serif Pro', serif;
 }
 
 p {
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
 }
