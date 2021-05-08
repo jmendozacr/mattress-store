@@ -14,7 +14,7 @@ const Home = () => {
     const getImage = () => {
         const imageName = selectedProduct !== undefined ? selectedProduct.imageFileName : 'classic-carousel.jpg';
 
-        return <img src={require(`./../images/${imageName}`).default} alt="default-image"/>
+        return <img src={require(`./../images/${imageName}`).default} alt="product"/>
     }
 
     return (
