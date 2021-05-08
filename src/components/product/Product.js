@@ -7,7 +7,7 @@ const Product = ({ product }) => {
             <img src={require(`./../../images/${product.imageFileName}`).default} alt="product"/>
             <div className="d-flex copy">
                 <p>{product.name} x {product.quantity}</p>
-                <p className="price">${product.price.toFixed(2)}</p>
+                <p className="price"> <strong>${product.price.toFixed(2)}</strong></p>
             </div>
         </li>
     );
