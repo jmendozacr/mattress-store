@@ -58,6 +58,12 @@ const MattressesProvider = ({children}) => {
         }
     }
 
+    const removeProduct = (type) => {
+        setCart(
+            cart.filter(item => item.type !== type)
+        );
+    }
+
     return (
         <MattressesContext.Provider 
         value={
@@ -69,7 +75,8 @@ const MattressesProvider = ({children}) => {
                 onAddProduct,
                 setActiveProduct,
                 count,
-                total
+                total,
+                removeProduct
             }
         }>
             {children}
