@@ -3,7 +3,7 @@ import Product from '../components/product/Product';
 import { useMattressesContext } from '../context/mattressesContext';
 
 const Cart = () => {
-    const { cart } = useMattressesContext();
+    const { cart, total, count } = useMattressesContext();
 
     return (
         <div className="row">
@@ -18,6 +18,9 @@ const Cart = () => {
                                 : <h3>No items added</h3>
                         }
                     </ul>
+                    <div className="sub-total-container d-flex align-items-end">
+                        <span className="ml-auto">Subtotal ({count} products): <strong>US ${total}</strong></span>
+                    </div>
                 </section>
             </div>
             <div className="col-sm-4">
