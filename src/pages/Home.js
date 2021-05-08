@@ -6,7 +6,6 @@ const Home = () => {
     const {
         products, 
         active, 
-        cart, 
         selectedProduct,
         onAddProduct,
         setActiveProduct
@@ -15,10 +14,9 @@ const Home = () => {
     const getImage = () => {
         const imageName = selectedProduct !== undefined ? selectedProduct.imageFileName : 'classic-carousel.jpg';
 
-        return <img src={require(`./../images/${imageName}`).default} alt="text"/>
+        return <img src={require(`./../images/${imageName}`).default} alt="default-image"/>
     }
 
-    console.log("cart", cart);
     return (
         <div className="row">
             <div className="col-sm-8">
