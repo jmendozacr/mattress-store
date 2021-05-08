@@ -1,16 +1,33 @@
 
 .product-list {
+    background-color: $primary;
+    padding: 10px;
     ul {
         list-style: none;
         padding: 0;
     }
+
+    .sub-total-container {
+        border-top: 1px solid #c1bfbf;
+        padding: 15px 20px 5px;
+        flex-direction: row-reverse;
+
+        strong {
+            font-weight: 600;
+        }
+    }
 }
 
 li {
+    border-top: 1px solid #c1bfbf;
     display: flex;
     flex-direction: row;
     margin-bottom: 20px;
-    background-color: $primary;
+    padding-top: 10px;
+
+    &:first-child {
+        border-top: none;
+    }
 
     img {
         height: 100px;
@@ -26,5 +43,9 @@ li {
 
     p {
         font-size: 20px;
+
+        strong {
+            font-weight: 600;
+        }
     }
 }
