@@ -5,6 +5,8 @@
 }
 
 .aside-home {
+    font-family: 'Questrial', sans-serif;
+
     h1 {
         padding-bottom: 20px;
         font-size: 28px;
@@ -41,9 +43,9 @@
 }
 
 .container-type-buttons {
+    flex-direction: column;
     margin-bottom: 40px;
     width: 100%;
-    flex-direction: column;
 
     @include media-breakpoint-up(xl) {
         flex-direction: row;
