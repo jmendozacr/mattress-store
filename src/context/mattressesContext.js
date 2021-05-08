@@ -14,8 +14,9 @@ const MattressesProvider = ({children}) => {
     const [active, setActive] = useState(0);
     const [cart, setCart] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState(products[0]);
+    const [loading, setLoading] = useState(true);
     const count = cart.reduce((acc, num) => acc + num.quantity, 0);
-    const total = cart.reduce((acc, num) => acc + num.price * num.quantity, 0)
+    const total = cart.reduce((acc, num) => acc + num.price * num.quantity, 0);
 
     const getProducts = () => {
         const { mattresses } = data;
@@ -26,7 +27,9 @@ const MattressesProvider = ({children}) => {
             splitObject = [...splitObject, {...value, type: key}]
         });
 
-        return setProducts(() => [...splitObject]);
+        setSelectedProduct(splitObject[0]);
+        setProducts(() => [...splitObject]);
+        setLoading(false);
     }
 
     useEffect(() => {
@@ -79,7 +82,7 @@ const MattressesProvider = ({children}) => {
                 removeProduct
             }
         }>
-            {children}
+            {!loading && children}
         </MattressesContext.Provider>
     )
 }

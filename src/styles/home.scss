@@ -27,6 +27,7 @@
 
     p {
         font-size: 16px;
+        margin-bottom: 0;
 
         @include media-breakpoint-up(md) {
             font-size: 20px;
@@ -52,6 +53,16 @@
     }
 }
 
+.container-rating {
+    p {
+        margin-right: 10px;
+    }
+
+    .star-ratings {
+        bottom: 3px;
+    }
+}
+
 .container-price {
     align-items: center;
     display: flex;
@@ -59,10 +70,10 @@
     margin-bottom: 20px;
 
     @include media-breakpoint-up(md) {
-        margin-bottom: 30px;
+        // margin-bottom: 30px;
     }
 
     @include media-breakpoint-up(xl) {
-        margin-bottom: 60px;
+        margin-bottom: 10px;
     }
 }
