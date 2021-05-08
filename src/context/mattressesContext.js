@@ -14,6 +14,7 @@ const MattressesProvider = ({children}) => {
     const [active, setActive] = useState(0);
     const [cart, setCart] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState(products[0]);
+    const count = cart.reduce((acc, num) => acc + num.quantity, 0);
 
     const getProducts = () => {
         const { mattresses } = data;
@@ -65,7 +66,8 @@ const MattressesProvider = ({children}) => {
                 cart, 
                 selectedProduct,
                 onAddProduct,
-                setActiveProduct
+                setActiveProduct,
+                count
             }
         }>
             {children}

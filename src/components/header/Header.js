@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { useMattressesContext } from '../../context/mattressesContext';
 
 const Header = () => {
-    const { cart } = useMattressesContext();
+    const { count } = useMattressesContext();
 
     return (
         <nav className="navbar justify-content-between">
@@ -18,7 +18,7 @@ const Header = () => {
                         <CartLogo/>
                     </NavLink>
                     {
-                        cart.length > 0 ? <div className="count">{cart.length}</div> : <></>
+                        count > 0 ? <div className="count">{count}</div> : <></>
                     }
                 </div>
             </div>
