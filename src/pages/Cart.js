@@ -25,7 +25,10 @@ const Cart = () => {
             </div>
             <div className="col-sm-4">
                 <aside>
-
+                    Subtotal ({count} products): <strong>US ${total}</strong>
+                    <button onClick={() => console.log("buy")} className="btn btn-add">
+                        Proceed to checkout
+                    </button>
                 </aside>
             </div>
         </div>
