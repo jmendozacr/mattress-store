@@ -19,13 +19,13 @@ const Home = () => {
 
     return (
         <div className="row">
-            <div className="col-sm-8">
+            <div className="col-lg-8">
                 <section className="container-image">
                 { getImage() }
                 </section>
             </div>
-            <div className="col-sm-4">
-                <aside>
+            <div className="col-lg-4">
+                <aside className="aside-home">
                     <h1>Choose Your Mattress</h1>
                     <p className="letter-spacing">SELECT MATTRESS TYPE</p>
                     <div className="btn-group btn-group-md container-type-buttons" data-toggle="button" role="group" aria-label="Button type">

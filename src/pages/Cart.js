@@ -7,7 +7,7 @@ const Cart = () => {
 
     return (
         <div className="row">
-            <div className="col-sm-8">
+            <div className="col-lg-8">
                 <section className="product-list">
                     <ul>
                         {
@@ -23,12 +23,15 @@ const Cart = () => {
                     </div>
                 </section>
             </div>
-            <div className="col-sm-4">
+            <div className="col-lg-4">
                 <aside>
                     Subtotal ({count} products): <strong>US ${total}</strong>
-                    <button onClick={() => console.log("buy")} className="btn btn-add">
-                        Proceed to checkout
-                    </button>
+                    {
+                        count > 0 &&
+                            <button onClick={() => console.log("buy")} className="btn btn-add">
+                                Proceed to checkout
+                            </button>
+                    }
                 </aside>
             </div>
         </div>

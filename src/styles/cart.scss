@@ -12,6 +12,11 @@
         border-top: 1px solid #c1bfbf;
         padding: 15px 20px 5px;
         flex-direction: row-reverse;
+        display: none !important;
+
+        @include media-breakpoint-up(lg) { 
+            display: flex !important;
+        }
 
         strong {
             font-weight: 600;
@@ -40,10 +45,19 @@ li {
         justify-content: space-between;
         padding: 10px 20px 20px;
         width: 100%;
+        flex-direction: column;
+
+        @include media-breakpoint-up(md) {
+            flex-direction: row;
+        }
     }
 
     p {
-        font-size: 20px;
+        font-size: 16px;
+
+        @include media-breakpoint-up(md) { 
+            font-size: 20px;
+        }
 
         strong {
             font-weight: 600;
@@ -53,6 +67,11 @@ li {
     .btn {
         display: inline-block;
         height: 40px;
+        width: 20%;
+
+        @include media-breakpoint-up(lg) {
+            width: 46px;
+        }
     }
 
     svg {
