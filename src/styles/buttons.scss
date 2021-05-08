@@ -6,12 +6,12 @@ button {
 
 .container-type-buttons {
     button {
-        border: 1px solid $cuaternary;
+        border: 1px solid $quaternary;
         background-color: $primary;
-        color: $cuaternary;
+        color: $quaternary;
     
         &.active {
-            background-color: $cuaternary;
+            background-color: $quaternary;
             color: $primary;
         }
     }
