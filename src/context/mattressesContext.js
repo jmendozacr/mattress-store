@@ -15,6 +15,8 @@ const MattressesProvider = ({children}) => {
     const [cart, setCart] = useState([]);
     const [selectedProduct, setSelectedProduct] = useState(products[0]);
     const [loading, setLoading] = useState(true);
+    const [showLoader, setShowLoader] = useState(false);
+    const [success, setSuccess] = useState(false);
     const count = cart.reduce((acc, num) => acc + num.quantity, 0);
     const total = cart.reduce((acc, num) => acc + num.price * num.quantity, 0);
 
@@ -67,6 +69,18 @@ const MattressesProvider = ({children}) => {
         );
     }
 
+    const onCheckoutOrder = () => {
+        setShowLoader(true);
+        setSuccess(true);
+
+        setInterval(() => {
+            setShowLoader(false);
+        }, 3000);
+
+        setCart([]);
+    }
+
+
     return (
         <MattressesContext.Provider 
         value={
@@ -79,7 +93,11 @@ const MattressesProvider = ({children}) => {
                 setActiveProduct,
                 count,
                 total,
-                removeProduct
+                removeProduct,
+                onCheckoutOrder,
+                showLoader,
+                success,
+                setSuccess
             }
         }>
             {!loading && children}

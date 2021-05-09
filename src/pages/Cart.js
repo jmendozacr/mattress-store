@@ -1,39 +1,73 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import Loader from "react-loader-spinner";
 import Product from '../components/product/Product';
 import { useMattressesContext } from '../context/mattressesContext';
+import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
 
 const Cart = () => {
-    const { cart, total, count } = useMattressesContext();
+    const { cart, total, count, onCheckoutOrder, showLoader, success, setSuccess } = useMattressesContext();
+
+    const showInfo = () => {
+        return(
+            <div className="alert alert-success success-container" role="alert">
+                <h3>Your order has been checkout!</h3>
+                <Link onClick={() => setSuccess(false)} to="/">
+                    Go to the home
+                </Link>
+                <button onClick={() => setSuccess(false)}>x</button>
+            </div>
+        );
+    }
 
     return (
         <div className="row">
-            <div className="col-lg-8">
-                <section className="product-list">
-                    <ul>
+        {
+            showLoader ?
+                <div className="d-flex loader-container">
+                    <Loader
+                        className="loader"
+                        type="TailSpin"
+                        color="#c19679"
+                        height={100}
+                        width={100}
+                        timeout={3000} //5 secs
+                    />
+                </div>
+                :
+                <>
+                    <div className="col-lg-8">
                         {
-                            cart.length > 0 ?
-                                cart.map((product, index) => (
-                                    <Product key={index} product={product}/>
-                                ))
-                                : <h3>No items added</h3>
+                            success && showInfo()
                         }
-                    </ul>
-                    <div className="sub-total-container d-flex align-items-end">
-                        <span className="ml-auto">Subtotal ({count} products): <strong>US ${total}</strong></span>
+                        <section className="product-list">
+                            <ul>
+                                {
+                                    cart.length > 0 ?
+                                        cart.map((product, index) => (
+                                            <Product key={index} product={product}/>
+                                        ))
+                                        : <h3>No items added</h3>
+                                }
+                            </ul>
+                            <div className="sub-total-container d-flex align-items-end">
+                                <span className="ml-auto">Subtotal ({count} products): <strong>US ${total}</strong></span>
+                            </div>
+                        </section>
                     </div>
-                </section>
-            </div>
-            <div className="col-lg-4">
-                <aside>
-                    Subtotal ({count} products): <strong>US ${total}</strong>
-                    {
-                        count > 0 &&
-                            <button onClick={() => console.log("buy")} className="btn btn-add">
-                                Proceed to checkout
-                            </button>
-                    }
-                </aside>
-            </div>
+                    <div className="col-lg-4">
+                        <aside>
+                            Subtotal ({count} products): <strong>US ${total}</strong>
+                            {
+                                count > 0 &&
+                                    <button onClick={() => onCheckoutOrder()} className="btn btn-add">
+                                        Proceed to checkout
+                                    </button>
+                            }
+                        </aside>
+                    </div>
+                </>
+        }
         </div>
     );
 }
