@@ -11,11 +11,13 @@ const Cart = () => {
     const showInfo = () => {
         return(
             <div className="alert alert-success success-container" role="alert">
-                <h3>Your order has been checkout!</h3>
+                <div className="d-flex justify-content-between">
+                    <h3>Your order has been checkout!</h3>
+                    <button className="btn" onClick={() => setSuccess(false)}><span aria-hidden="true">&times;</span></button>
+                </div>
                 <Link onClick={() => setSuccess(false)} to="/">
                     Go to the home
                 </Link>
-                <button onClick={() => setSuccess(false)}>x</button>
             </div>
         );
     }
