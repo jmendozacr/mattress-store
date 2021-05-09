@@ -1,8 +1,8 @@
 # General actions
 
 * Click on mattress type to change product.
-* Click on add item to cart.
-* Navigate to `/cart` page clicking cart icon.
+* Click on add item to add to the cart.
+* Navigate to `/cart` page clicking on cart icon.
 * Proceed to checkout your order clicking on Proceed to checkout button.
 
 # Getting Started with Create React App
