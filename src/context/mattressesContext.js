@@ -38,12 +38,6 @@ const MattressesProvider = ({children}) => {
         getProducts();
     }, []);
 
-    useEffect(() => {
-        if (products.length > 0) {
-          setSelectedProduct(products[0]);
-        }
-     }, [products]);
-
     const setActiveProduct = (item, index) => {
         setActive(index);
         setSelectedProduct(item);
