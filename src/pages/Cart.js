@@ -53,13 +53,13 @@ const Cart = () => {
                                 }
                             </ul>
                             <div className="sub-total-container d-flex align-items-end">
-                                <span className="ml-auto">Subtotal ({count} products): <strong>US ${total}</strong></span>
+                                <span className="ml-auto">Total ({count} products): <strong>US ${total.toFixed(2)}</strong></span>
                             </div>
                         </section>
                     </div>
                     <div className="col-lg-4">
                         <aside>
-                            Subtotal ({count} products): <strong>US ${total}</strong>
+                            Total ({count} products): <strong>US ${total.toFixed(2)}</strong>
                             {
                                 count > 0 &&
                                     <button onClick={() => onCheckoutOrder()} className="btn btn-add">
